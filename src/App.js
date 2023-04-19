@@ -7,9 +7,12 @@ import Card from './components/Card'
 const App = () => {
   const [score, setScore] = useState(0);
   const [cards, setCard] = useState([1,2,3,4]);
+  const [usedCards, setUsedCards] = useState([]);
 
-  const incrementScore = () => {
+  const incrementScore = e => {
+    console.log(e)
     setScore(score + 1);
+
   };
 
   return(
