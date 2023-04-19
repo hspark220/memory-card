@@ -3,15 +3,15 @@ import './App.css';
 import Card from './components/Card'
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [score, setCount] = useState(0);
 
   const incrementCount = () => {
-    setCount(count + 1);
+    setCount(score + 1);
   };
 
   return(
-    <div> 
-      <h1 className='count'>{count}</h1>
+    <div className='body'> 
+      <h1 className='count'>{score}</h1>
       <Card onClick={incrementCount} />
     </div>
   );

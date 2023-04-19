@@ -1,7 +1,7 @@
 const Card = (props) => {
     return(
-        <div onClick={props.onClick}>
-            <h1>Card</h1>
+        <div className="card" onClick={props.onClick}>
+            <h1>1</h1>
         </div>
     )
 }
