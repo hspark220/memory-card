@@ -1,18 +1,26 @@
 import { useState } from 'react';
+import uniqid from 'uniqid';
 import './App.css';
 import Card from './components/Card'
 
-const App = () => {
-  const [score, setCount] = useState(0);
 
-  const incrementCount = () => {
-    setCount(score + 1);
+const App = () => {
+  const [score, setScore] = useState(0);
+  const [cards, setCard] = useState([1,2,3,4]);
+
+  const incrementScore = () => {
+    setScore(score + 1);
   };
 
   return(
     <div className='body'> 
       <h1 className='count'>{score}</h1>
-      <Card onClick={incrementCount} />
+      <div className='cards'>
+        {cards.map( card => {
+          return <Card card={card} onClick={incrementScore} key={uniqid()}/>
+        })}
+      </div>
+      
     </div>
   );
 };
