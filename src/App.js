@@ -10,8 +10,16 @@ const App = () => {
   const [usedCards, setUsedCards] = useState([]);
 
   const incrementScore = e => {
-    console.log(e)
-    setScore(score + 1);
+    const value = e.target.id;
+    
+    if (usedCards.includes(value)) {
+      setUsedCards([]);
+      setScore(0);
+    } else {
+      setUsedCards(usedCards.concat(value));
+      setScore(score + 1);
+    }
+    
 
   };
 
